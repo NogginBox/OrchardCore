@@ -15,7 +15,7 @@ namespace OrchardCore.AuditTrail.Services
         /// <summary>
         /// Records an audit trail event.
         /// </summary>
-        /// <typeparam name="T">The audit trail event provider type to determine the scope of the event name.</typeparam>
+        /// <typeparam name="TAuditTrailEventProvider">The audit trail event provider type to determine the scope of the event name.</typeparam>
         /// <param name="auditTrailContext">The context used to create a new audit trail event.</param>
         Task AddAuditTrailEventAsync<TAuditTrailEventProvider>(AuditTrailContext auditTrailContext) where TAuditTrailEventProvider : IAuditTrailEventProvider;
 
@@ -36,7 +36,7 @@ namespace OrchardCore.AuditTrail.Services
         /// <summary>
         /// Gets a single event from the audit trail by ID.
         /// </summary>
-        /// <param name="id">The event ID.</param>
+        /// <param name="eventFilterData">The event filter data.</param>
         /// <returns>A single event.</returns>
         Task<AuditTrailEvent> GetAuditTrailEventAsync(string eventFilterData);
 
